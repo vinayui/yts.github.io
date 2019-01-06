@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="overflow-y: hidden;">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Yannick Tech Systems</title>
+
+    <link href="images/favicon.ico" rel="icon" type="text/css" />
+    <link href="css/home.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap4d6c.css?16s5ss" rel="stylesheet" type="text/css">
+    <link href="css/animation.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style-demo.css" rel="stylesheet" type="text/css">
+    <link href="css/rockox.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+
+    <link href="fonts/FontAwesome/styles.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+<script src="html5shiv.js"></script>
+<script src=css3-mediaqueries.js"></script>
+<script src="respond.min.js"></script>
+<![endif]-->
+
+
+    <!--[if gte IE 9]>
+		<style type="text/css">
+			.gradient {
+				 filter: none;
+			}
+		</style>
+	<![endif]-->
+    <link rel='stylesheet' id='layerslider-css' href='wp-content/plugins/LayerSlider/static/css/layerslider3c213c21.css?ver=5.1.1' type='text/css' media='all' />
+    <style>
+    #map_canvas {
+        background-color: #fff !important
+    }
+    .careerTable td, th {    
+
+        text-align: left;
+    }
+
+    .careerTable {
+        border-collapse: collapse;
+        width: 90%;
+    }
+
+    .careerTable td {
+        padding: 4px;
+    }
+
+    .careerTable th{
+        width: 15%;
+        padding: 4px;
+        vertical-align: initial;
+    }
+</style>
+
+<script type='text/javascript' src='wp-includes/js/jquery/jquerya4e6a4e6.js?ver=1.11.0'></script>
+<script type='text/javascript' src='wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery3c213c21.js?ver=5.1.1'></script>
+<script type='text/javascript' src='wp-content/plugins/LayerSlider/static/js/greensock4a804a80.js?ver=1.11.2'></script>
+<script type='text/javascript' src='wp-content/plugins/LayerSlider/static/js/layerslider.transitions3c213c21.js?ver=5.1.1'></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+    var map;
+    var Latitude, Longitude;
+    var markersArray = [];
+
+    function initialize() {
+        var myLatlng1 = new google.maps.LatLng(33.113177, -96.807174);
+
+        var mapOptions = {
+            zoom: 4,
+            center: myLatlng1,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+
+        initialLocation = new google.maps.LatLng(17.4018142, 78.5601842);
+        map.setCenter(initialLocation);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng1,
+        });
+        marker.setMap(map);
+        var marker = new google.maps.Marker({
+            position: initialLocation,
+            map: map,
+            title: "You are here!"
+        });
+
+
+        getLocations();
+
+    };
+
+    function getLocations() {
+            //PlotMarker(37.5534218,-121.981548);
+            PlotMarker(17.452608, 78.390172);
+        }
+
+        function PlotMarker(Lat, Long) {
+            var marker1 = new google.maps.Marker({
+                position: new google.maps.LatLng(Lat, Long),
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP
+            });
+            markersArray.push(marker1);
+        }
+        google.maps.event.addDomListener(window, "load", initialize);
+    </script>
+
+    <!--Slider default Styles ends -->
+</head>
+
+<body data-spy="scroll" data-target="#navigation" data-offset="80">
+    <!--content3-->
+   <!-- <div class="mobile_banner">
+        <div class="scrollto animated fadeInDownBig mob-banner" style="padding-top:40%; text-align:center;">
+            <span class="ls-l-1" style="font-weight: bold; font-size: 19px; color: #ffb400; white-space: nowrap; display: block; margin-bottom: 30px;">Let your apps speak</span>
+            <a href="#about"><img src="wp-content/plugins/LayerSlider/static/img/bottom_icon_white.png" alt="arrow"></a>
+        </div>
+    </div>-->
+
+
+    <section id="navigation">
+        <div id="undefined-sticky-wrapper" class="sticky-wrapper">
+            <div class="navbar navbar-default navbar-static-top" role="navigation">
+                <!-- CONTAINER SECTION::START-->
+                <div class="container">
+                    <!-- NAVBAR HEADER::START-->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       <!-- <a class="navbar-brand" href="index-2.html"><img src="images/yanick.png" alt="logo"></a>-->
+                     <!--   <a class="navbar-brand" href="index-2.html"><img src="images/yts.png" alt="logo"></a>-->
+                        <a class="navbar-brand js-scroll-trigger logo " href="index-2.html">Yannick Tech Systems </a>
+                        <!--<ul class="responsive_social_links">
+                            <li> <a href="https://hr.mythriconsulting.com/" target="blank"><button id="my3button"><span><img src="images/logfgo.png" width="30"></span><span class="buttonSpace">Employee Portal</span></button></a></li>
+                        </ul>-->
+                    </div>
+                    <!-- NAVBAR HEADER::END-->
+                    <!-- NAVBAR COLLAPSE::START-->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right scrollto desktop">
+                         <!--   <li><a href="#home">Home</a></li>-->
+                            <li><a class="company_menu" href="#about">COMPANY</a></li>
+                            <li><a href="#whoweare">WHO WE ARE</a></li>
+                            <li><a href="#mission">MISSION &amp; VALUES</a></li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle js-activated">SERVICES </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#consulting">CONSULTING</a></li>
+                                    <li><a href="#staff">STAFFING</a></li>
+                                    <li><a href="#app">APP DEVELOPMENT</a></li>
+                                    <li><a href="#training">TRAINING</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#Clients">Clientele</a></li>
+                          <!--  <li><a href="#careers">CAREERS</a></li>-->
+                            <li><a href="#contact">CONTACT</a></li>
+                            <!--<li><a href="https://hr.mythriconsulting.com/" target="blank"><button id="my3button"><span><img src="images/logfgo.png" width="30"></span><span class="buttonSpace">Employee Portal</span></button></a></li>-->
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right scrollto mobile">
+                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="#about">COMPANY</a></li>
+                            <li><a href="#whoweare">WHO WE ARE</a></li>
+                            <li><a href="#mission">MISSION &amp; VALUES</a></li>
+                            <li><a href="#consulting">CONSULTING</a></li>
+                            <li><a href="#staff">STAFFING</a></li>
+                            <li><a href="#app">APP DEVELOPMENT</a></li>
+                            <li><a href="#training">TRAINING</a></li>
+
+                            <li><a href="#Clients">Clientele</a></li>
+                            <li><a href="#careers">CAREERS</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <!-- NAVBAR COLLAPSE::END-->
+                </div>
+                <!-- CONTAINER SECTION::START-->
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-section">
+            <div class="container about-mobile about-content">
+                <div class="row">
+                    <!--<a href="http://localhost:8090/" target="_blank"><button style="float:right" class="btn btn-primary">Employee Login</button></a>-->
+                    <div class="col-md-5 padding-50">
+                        <div class="section-heading text-center">
+                            <h2 class="large section-title">Company</h2>
+                        </div>
+                        <p class="skills-wrapper wow bounceIn animated">
+                           <h5>Yannick Tech Systems  | Placement Agency, HR Consultancy, Hyderabad</h5>
+                            <p> “Good employees are an organization’s assets. Without good employees, an organization can fall down like a house of cards. It can not even think to grow without them. Because it is the vision of its employees that defines and directs the rise or fall of corporate entity.”</p>
+
+                            <p>It is very necessary to have talented employees to work for you. People, who see your vision, believe in it and help you to achieve it. Prospective employees you can trust for their talents, dedication and loyalty. Such people are not easy to find. It is because they do not choose the best. The best chooses them. That is the reason why you should choose YannickTechSystems for your placement needs today and tomorrow. We are the best Placement consultants in Hyderabad because we know what our clients actually need. Yannick Tech Systems  HR Manpower Placement agency has the necessary experience and expertise to get you the best talented prospects for your organization and its growth. Here are the most important factors which can be considered to count on us.</p>
+
+                        <p style="text-align: justify;"><!--<img class="size-full wp-image-253 alignleft" src="wp-content/uploads/2016/08/placement-consultant-in-noida.png" alt="placement consultant in  Hyderabad" width="168" height="75">-->Since we have seen the growth of <b>manpower requirement</b>, we have acquired versatile skills and Capabilities as an organization in understanding any business or institute from their own perspective and could able to deliver the solutions which exactly match their requirements in cost-effective method. And thus we have effective teams from various streams like Arts, Science, Technology, and Management which really forms the best in the industry to deliver client-centric solutions.</p>
+
+                        <p style="text-align: justify;"><!--<img class="size-full wp-image-252 alignleft" src="wp-content/uploads/2016/08/placement-agency-in-noida.png" alt="placement agency in Hyderabad" width="168" height="75">--> How long does it take them to respond to questions? Provide a proposal? Make meetings for follow-up questions? Make sure you know when and who you can reach whenever you need something done. We at <a href="about-dabs-india/index.html" target="_blank"><b>Yannick Tech Systems</b></a> strongly believe that responsiveness to client alone can make or break the business. We provide 24×7 mail support for all our services at any point of time.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="whoweare" class="whoweare_missions services-section-2">
+        <div class="container about-content whoweare_pad">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about-box wow animated fadeInDown">
+                        <img src="images/brain.png" alt="img1" class="pencil">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-box wow animated fadeInDown">
+                        <div class="about-box-text">
+                            <h4>Who We Are</h4>
+                            <p>Yannick Tech Systems  is a leading job search company .We are an End to End IT Solutions provider with an experience in Business Consulting, IT Integration, Project Management and Staff Augmentation.</p>
+
+                            <p>We take pride in our philosophy of “Organic Growth”. We are a fast growing software consulting company offering software development solutions to all our clients through offshore and onsite services.</p>
+
+                            <p>Our strength lies in leveraging innovation and a global onsite–offshore delivery model to provide best Return on Investments (ROI) for our clients. With an established offshore service centres we are able to provide our customers cost effective and customized solutions.</p>
+
+                            <p>In this highly competitive global marketplace with unlimited opportunities, where growth and consolidation brings upon the distinction, our clients face a host of new challenges continuously.</p>
+
+                            <p>Yannick Tech Systems  India offer world-class placement as well as settlement services operational. It is managed by highly qualified professional manpower specialist consultants with several years of training and experience. Through a unique combination of skills, competencies, knowledge and favorable experience, Yannick Tech Systems  India is able to offer Manpower services ranging from consultancy to turn-key project implementation and operation. The company recognizes and caters for the special personnel needs of clients in the various industries</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="mission" class="whoweare_missions services-section-2">
+        <div class="container about-content">
+            <div class="row mission_pad">
+                <div class="col-md-6">
+                    <div class="about-box wow animated fadeInDown">
+                        <div class="about-box-text">
+
+                            <h4><b>Our Mission:</b></h4>
+                            <p>missionGrowth is the most benign aspect of any business organization. We don’t think differently either. To expand our horizon in exploration of new avenues, we are driven by our aspirations to breach the geographical boundaries and work on a global platform.</p>
+
+                            <h4><b>Our Vision:</b></h4>
+
+
+                            <p>We believe that every efficient employee is the asset of an organization and every job is tailor made for a job seeker. Hence, as jobs consultant, we try to make both these ends meet with our perseverance, commitment, and precision. We envision matching right candidates with companies they are inclined to work at with our unique search efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-box wow animated fadeInDown">
+                        <img src="images/pencils.png" alt="img1" class="pencil">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="our_serives">
+        <h1 class="padding-80">Our Services</h1>
+    </section>
+
+    <section id="consulting" class="consulting">
+        <div class="container about-content">
+            <div class="row">
+                <div class="col-md-5 wow animated fadeInLeft padding-50">
+                    <h4><span style="color: #993300;">Services we provide:</span></h4>
+                    <p class="grey"><b>Yannick Tech Systems</b> ensures the selection of the right candidate for the right job, with the right attitude and motivation. Our process begins by understanding our client’s organizational interest, operational structure and operating systems. This understanding we feel, is critical not only for providing efficient services, but also for establishing a satisfactory long term working relationship with our clients</p>
+                </div>
+                  <!--  <h4>Consulting</h4>
+                    <p>The e-World has created innumerable opportunities for organizations to exploit their core business competencies by transforming their technology infrastructure from business to e-Business. It is imperative that organizations define
+                    the right strategy, adopt a viable business model, and choose wisely among the varied technology options.</p>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff" class="staff">
+        <div class="container about-content">
+            <div class="row">
+                <div class="col-md-6 wow animated pull-right fadeInRight padding-50">
+                   <!-- <h4>Staffing</h4>-->
+                    <h4>Consulting</h4>
+                    <p>The e-World has created innumerable opportunities for organizations to exploit their core business competencies by transforming their technology infrastructure from business to e-Business. It is imperative that organizations define
+                        the right strategy, adopt a viable business model, and choose wisely among the varied technology options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="app" class="app">
+        <div class="container about-content">
+            <div class="row">
+                <div class="col-md-4 wow animated fadeInLeft padding-50">
+                    <h4>Application Development</h4>
+                    <p>The e-World has created innumerable opportunities for organizations to exploit their core business competencies by transforming their technology infrastructure from business to e-Business. It is imperative that organizations define
+                    the right strategy, adopt a viable business model, and choose wisely among the varied technology options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="training" class="training">
+        <div class="container about-content">
+            <div class="row">
+                <div class="col-md-6 wow animated pull-right fadeInRight padding-50">
+
+
+                    <div id="content">
+                        <div id="content-core">
+
+                            <div id="main">
+                                <div id="intro" class="option1"><div id="intro-core"><h1 class="page-title"><span>Call center &amp; BPO’s</span></h1><div id="breadcrumbs"></div></div></div>
+                                <div id="main-core">
+
+
+                                    <article id="post-176" class="post-176 page type-page status-publish hentry">
+
+                                        <p>This industry has been growing fatly. <strong>BPO industry</strong> hiring lac of graduates every year. As 2012 Around 2.8 million people work in <strong>BPO sector.</strong> People, those who have Good command over any language, Problem solving nature, analytical skills are perfect candidates and can get handsome packages in <strong>BPO/Call centres</strong>. <strong>Yannick Tech Systems</strong> providing best contribution in hiring of proficient and matched candidates and maximize the client gratification.</p>
+                                        <h3><span style="color: #993300;">Hiring profiles in BPO/Call Centres:</span></h3>
+                                        <ul>
+                                            <li>Customer Care Executive</li>
+                                            <li>Associate/Executive</li>
+                                            <li>Processing Executive</li>
+                                            <li>Research Analyst</li>
+                                            <li>Team leader</li>
+                                        </ul>
+                                        <hr>
+
+
+
+
+                <!--    <h4>Training</h4>
+                    <p>Mythri Offers 5 weeks User Interface/Front End Development training. All the clients in the world wide now define their products with Rich look and feel to their end users. At Mythri, We train the depth concepts of User Interface Development.
+                    We train the techonlogies HTML/HTML5, CSS/CSS3, JavaScript, Object Oriented JavaScript, jQuery, AJAX, JSON, Responsive design and Client side MVC basics.</p>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <section id="Clients" class="clients-bg">
+        <div class="container about-content">
+            <div class="row">
+                <div class="col-md-12 wow animated bounceIn padding-80">
+                    <div class="client-img">
+                        <p class="margin-btm-40">
+                            The e-World has created innumerable opportunities for organizations to exploit their core business competencies by transforming their technology infrastructure from business to e-Business. It is imperative that organizations define the right strategy,
+                        adopt a viable business model, and choose wisely among the varied technology options.</p>
+                        <img src="images/client-img.png" class="rotate-animate" alt="" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contactus testi">
+        <div class="container contact_pad about-content">
+            <div class="contact_temp">
+                <div class="col-md-6 wow animated bounceIn contact_temp_lt">
+                    <!-- <h4>Write to Us</h4>-->
+                    <div class="col-md-12 contact_info">
+                        <h5 class="writ_txt">Write to us</h5>
+                        <p class="wrt_para">Write to us on your queries and we will get back to you shortly<br><span style="font-style:italic; font-weight:100;">(Fields marked with <span style="color:#ff6c00; font-weight:bold;">*</span> are required)</span>
+                        </p>
+                        <form action="#" method="post" id="contact_us" enctype="multipart/form-data">
+
+                            <p>
+                                <label for="first_name" class="lbl">First Name <span class="required">*</span></label>
+                                <input type="text" class="textbox3" id="first_name" name="first_name" placeholder="" required maxlength="130" />
+                            </p>
+
+                            <p>
+                                <label for="last_name" class="lbl">Last Name <span class="required">*</span></label>
+                                <input type="text" class="textbox3" id="last_name" name="last_name" placeholder="" required maxlength="130" />
+                            </p>
+
+                            <p>
+                                <label for="company_name" class="lbl">Company</label>
+                                <input type="text" class="textbox3" id="company_name" name="company_name" placeholder="" maxlength="130" />
+                            </p>
+                            <p>
+                                <label for="txtEmail" class="lbl">Email <span class="required">*</span></label>
+                                <input id="txtEmail" type="text" class="textbox3" name="contact_email" placeholder="" required maxlength="35" />
+                            </p>
+                            <p>
+                                <label for="phone" class="lbl">Phone <span class="required">*</span></label>
+                                <input id="phone" type="text" class="textbox3" name="phone_no" placeholder="" required maxlength="35" />
+                            </p>
+                            <!--<p>
+                        <label for="author" class="lbl">Location</label>
+                          <input id="txtEmail" type="text" class="textbox3" name="contact_email" placeholder="" required maxlength="35"/>
+               		</p>
+                     <p>
+                        <label for="author" class="lbl">Zip</label>
+                          <input id="txtEmail" type="text" class="textbox3" name="contact_email" placeholder="" required maxlength="35"/>
+                      </p>-->
+
+                      <p>
+                        <label for="author" class="lbl">Message <span class="required">*</span></label>
+                        <textarea name="contact_message" id="author" class="textbox3 texrr" placeholder="" required maxlength="300"></textarea>
+                    </p>
+
+
+                    <div class="col-lg-8 capcha" style="margin-left:0px; padding:0px;">
+                        <input name="answer" id="answer" type="text" class="textbox_cap">&nbsp;&nbsp;<img src="captcha.jpg" alt="" />
+
+                    </div>
+
+                    <div class="col-lg-4" style="margin-right:0px; padding:0px;">
+                        <div class="contact_btn1"><input type="submit" class="btn btn-bordered submit" value="Submit" name="submit"></div>
+
+                        <!--<span class='msg'><?php echo $msg; ?></span>-->
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+                <p class="sent">Thanks for submitting. We will contact you shortly...</p>
+            </div>
+        </div>
+        <div class="col-md-6 wow animated fadeInRight contact_temp_rt" data-wow-delay="0s" style="visibility: visible; -webkit-animation-delay:0s;">
+            <!--<h4 class="map">Reach Us</h4>-->
+            <div class="col-md-12" id="googleMap" style="height:350px;"></div>
+            <div class="col-md-12 loc_txt">
+
+                <h2>Our Locations</h2>
+                <section id="texas">
+                    <h5>Hyderabad</h5>
+                    <span> Upppal, <span><br><span>Telangana, India - 50003</span><br>
+                    <span>
+                        <img src="images/phone_icon.png" alt="phone_icon" />&nbsp;&nbsp;+91 9133131989<br>
+                        <img src="images/fax_icon.png" alt="phone_icon" />&nbsp;&nbsp;+9140 27609000<br>
+                        <img src="images/mail_icon.png" alt="mail_icon" />&nbsp;&nbsp;<a href="mailto:info@YannickTechSystems.com" class="mail_txt">info@YannickTechSystems.com</a>
+                    </span>
+                </section>
+               <!-- <section id="california">
+                    <h5>India</h5>
+                    <span>Survey #75 & 76, 8th Floor B Block, </span><br><span>MJR Magnifique Building</span><br>
+                    <span>Raidurgam Signal, Hyderabad 500032, India.</span><br>
+                    <span>
+                       <img src="images/phone_icon.png" alt="phone_icon" />&nbsp;&nbsp;040-40065990<br>
+                       <img src="images/mail_icon.png" alt="mail_icon" />&nbsp;&nbsp;<a href="mailto:info@mythriconsulting.com" class="mail_txt">info@mythriconsulting.com</a>
+                   </span>
+               </section>-->
+           </div>
+           <!--<img src="images/contact-map.png" alt="map"> -->
+       </div>
+       <div class="clearfix"></div>
+   </div>
+</div>
+<section class="footer_btm">
+    <div class="container">
+        <div class="col-md-4">
+            <p>© Yannick Tech Systems. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-4 ">
+            <p class="center"><img src="images/footer_shape.png" alt="footer_shape"></p>
+        </div>
+        <div class="col-md-4">
+            <span style="position: relative;left: 65%;top:10px;">
+             <a href="#"><img style="margin-left:9px;" src="images/fb.png" alt="social_icons"></a>
+             <a href="#"><img src="images/twit.png" alt="social_icons"></a>
+             <a href="#"><img src="images/g_plus.png" alt="social_icons"></a>
+         </span>
+         <p class="pull-right">
+            <a href="#" class="top"><img src="images/top_arrow_icon.png" alt="top_arrow_icon"></a>
+        </p>
+    </div>
+</div>
+</section>
+</section>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.bxslider.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<script type="text/javascript">
+    $('.best_deal').bxSlider({
+        minSlides: 1,
+        maxSlides: 1,
+        moveSlides: 1,
+        auto: true,
+        autoControls: true,
+        pager: true
+    });
+</script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#flexiselDemo3").flexisel({
+            visibleItems: 9,
+            animationSpeed: 2000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint: 480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint: 640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint: 768,
+                    visibleItems: 3
+                }
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        jQuery.validator.addMethod('filesize', function(value, element, param) {
+            return this.optional(element) || (element.files[0].size <= param)
+        });
+        $("#INDIA").hide();
+        $('#location-tabing li').click(function() {
+            $('#location-tabing li').removeClass('active');
+            $(this).addClass('active');
+            var val = $(this).attr("data-role");
+            if (val == "#INDIA") {
+                $(val).show();
+                $("#USA").hide();
+            } else {
+                $(val).show();
+                $("#INDIA").hide();
+            }
+        });
+        $(".singlejob").each(function(index) {
+            $(this).on("click", function() {
+                    // For the boolean value
+                    $(this).siblings().removeClass('active');
+                    $('h3').removeClass('active');
+                    $('h3').next().hide();
+                    $(this).addClass('active');
+                    $('h3', this).addClass('active');
+                    $('#job_description', this).show();
+                });
+        });
+        $("#contact_us").validate({
+            rules: {
+                first_name: {
+                    required: true,
+                    lettersonly: true
+                },
+                last_name: {
+                    required: true,
+                    lettersonly: true
+                },
+                contact_email: {
+                    required: true,
+                    email: true
+                },
+                phone_no: {
+                    required: true,
+                    number: true
+                },
+                contact_message: {
+                    required: true,
+                },
+                answer: {
+                    required: true,
+                    remote: "process.php"
+                }
+            },
+            messages: {
+                first_name: {
+                    required: "",
+                    lettersonly: "Invalid username"
+                },
+                last_name: {
+                    required: "",
+                    lettersonly: "Invalid username"
+                },
+                contact_email: {
+                    required: "",
+                    email: ""
+                },
+                phone_no: {
+                    required: "",
+                    number: ""
+                },
+                contact_message: {
+                    required: "",
+                },
+                answer: {
+                    required: "",
+                }
+            },
+            submitHandler: function(form) {
+                var request;
+                var $inputs = $(form).find("input, button, textarea");
+                var serializedData = $(form).serialize();
+                request = $.ajax({
+                    url: "contact_mail.php",
+                    type: "post",
+                    data: serializedData,
+                    success: function() {
+
+                        $(".sent").fadeIn(10, function() {
+                            setTimeout(function() {
+                                $(".sent").fadeOut(10)
+                            }, 3000);
+                            $(".textbox3").val('');
+                            $(".textbox3").val('');
+                            $(".textbox_cap").val('');
+                        })
+                    }
+                });
+                $("#phone").keypress(function(e) {
+                        //if the letter is not digit then display error and don't type anything
+                        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                            //display error message
+                            $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                            return false;
+                        }
+                    });
+            }
+        });
+    });
+    jQuery.validator.addMethod("lettersonly", function(value, element) {
+        return this.optional(element) || /^[a-zA-Z\. ]+$/i.test(value);
+    }, "Letters only please");
+    $("#phone").keypress(function(e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+        });
+    $(document).ready(function(e) {
+        $('.num').keypress(function(e) {
+            var unicode = e.charCode ? e.charCode : e.keyCode;
+            if (unicode != 8 && unicode != 46 && unicode != 9) {
+                if (unicode < 48 || unicode > 57) return false;
+            }
+
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $("a[href='.top']").click(function() {
+            $("html, body").animate({
+                scrollTop: 5000
+            }, "5000");
+            return false;
+        });
+    });
+</script>
+<script src="js/jquery.easing.1.3.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.mixitup.min.js" type="text/javascript"></script>
+<script src="js/wow.min.js" type="text/javascript"></script>
+<script src="js/jquery.sticky.js" type="text/javascript"></script>
+<script src="js/ScrollToTopPlugin.js" type="text/javascript"></script>
+<script src="js/custom.js" type="text/javascript"></script>
+<script src="js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<!--<script type="text/javascript" src="js/jquery_007.js"></script>-->
+<!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+
+</body>
+
+
+</html>
